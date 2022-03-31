@@ -13,11 +13,11 @@ Other things to note:
 
 This is what the clustering solution _should_ look like...
 
-![Two Gaussians detected properly with no noise points in sight](plots/no_noise.jpg?raw=true "No noise points")
+![Two Gaussians detected properly with no noise points in sight](plots/no_noise_small.jpg?raw=true "No noise points")
 
 ... but when `n_noise_points` >> `n_points` in each cluster (250 in this case), all hell breaks loose!
 
-![Way too many noise points for HDBSCAN! Postprocessing is required!](plots/some_noise.jpg?raw=true "7500 noise points")
+![Way too many noise points for HDBSCAN! Postprocessing is required!](plots/some_noise_small.jpg?raw=true "7500 noise points")
 
 ## Requirements
 * Python 3.6+
