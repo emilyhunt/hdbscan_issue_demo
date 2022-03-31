@@ -9,6 +9,16 @@ Other things to note:
 * Unclustered noise points (i.e. not assigned to a cluster by HDBSCAN) are displayed as faint black points; clustered points are displayed with colours. There are only 10 colours, so it will start reusing them eventually!
 * There are way fewer points involved (a few thousand by default) vs. what you see in Gaia. You can turn up n_points massively to e.g. 2000 to simulate this better and see more false positives, but... good luck to your computer =)
 
+## Quick example
+
+This is what the clustering solution _should_ look like...
+
+![Two Gaussians detected properly with no noise points in sight](plots/no_noise.jpg?raw=true "No noise points")
+
+... but when `n_noise_points` >> `n_points` in each cluster (250 in this case), all hell breaks loose!
+
+![Way too many noise points for HDBSCAN! Postprocessing is required!](plots/some_noise.jpg?raw=true "7500 noise points")
+
 ## Requirements
 * Python 3.6+
 * Numpy

@@ -7,6 +7,7 @@ from matplotlib.widgets import Slider, Button
 # SETTINGS
 # ---------------------------------------
 # Controls number of points in cluster. Set lower if it's running too slow (m_clSize will need to be lower too)
+# If you set it much higher, you may also want to reduce the alpha of noise points in noise_kwargs
 n_points = 250
 max_noise_points = n_points * 2 * 20
 n_noise_points = 0
@@ -25,7 +26,7 @@ figsize = (8, 6)
 dpi = 100
 
 line_kwargs = dict(ms=4, alpha=1.0)
-noise_kwargs = dict(ms=3, alpha=0.1, color='k')
+noise_kwargs = dict(ms=2, alpha=0.2, color='k')
 
 # ---------------------------------------
 # DATA
@@ -42,7 +43,7 @@ data_both = np.vstack((data_cluster, data_cluster_2, data_noise))
 # MATPLOTLIB SETUP
 # ---------------------------------------
 fig, ax_points = plt.subplots(nrows=1, ncols=1, figsize=figsize, dpi=dpi)
-plt.subplots_adjust(left=0.25, bottom=0.25)
+plt.subplots_adjust(bottom=0.25, top=0.9)
 ax_points.set(xlabel='dimension 0', ylabel='dimension 1', xlim=(0, 1), ylim=(0, 1))
 
 # Add sliders
@@ -58,7 +59,7 @@ slider_min_cluster_size = Slider(ax_min_cluster_size, 'min_cluster_size',
 slider_min_samples = Slider(ax_min_samples, 'min_samples', *min_samples_range, valinit=min_samples, valstep=5)
 
 # Add a reset button
-ax_reset = plt.axes([0.9, 0.025, 0.1, 0.04])
+ax_reset = plt.axes([0.85, 0.025, 0.1, 0.04])
 button = Button(ax_reset, 'Reset', color=axcolor, hovercolor='0.975')
 
 # Add empty lines to update later
