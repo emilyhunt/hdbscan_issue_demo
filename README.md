@@ -7,7 +7,7 @@ Matplotlib stuff is based on [this tutorial](https://matplotlib.org/3.1.1/galler
 Other things to note:
 * The data is 5D, but only two dimensions are displayed (making it more similar to Gaia data)
 * Unclustered noise points (i.e. not assigned to a cluster by HDBSCAN) are displayed as faint black points; clustered points are displayed with colours. There are only 10 colours, so it will start reusing them eventually!
-* There are way fewer points involved (a few thousand by default) vs. what you see in Gaia. You can turn up n_points massively to e.g. 2000 to simulate this better and see more false positives, but... good luck to your computer =)
+* There are way fewer points involved (a few thousand by default) vs. what you see in Gaia. You can turn up n_points massively to e.g. 2000 to simulate this better and see more false positives, but... good luck to your computer =) this example is contrived to run efficiently so don't expect values of min_cluster_size and min_samples to behave the same way they do for Gaia works.
 
 ## Quick example
 
